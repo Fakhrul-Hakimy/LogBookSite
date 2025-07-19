@@ -1,3 +1,8 @@
+<?php
+// Handle error message and email from URL parameters
+$error_message = isset($_GET['error']) ? $_GET['error'] : '';
+$user_email = isset($_GET['email']) ? $_GET['email'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +79,7 @@
         <form action="login.php" method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($EMAIL); ?>" required>
+                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user_email); ?>" required>
             </div>
             
             <div class="form-group">

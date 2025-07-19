@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -60,22 +60,17 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="welcome-message">
-            Welcome, <?php echo htmlspecialchars($_SESSION['email']); ?>!
-        </div>
-        <a href="logout.php" class="logout-btn">Logout</a>
-    </div>
 
+<div class="header">
+        <div class="back-message">
+            Back to menu
+        </div>
+        <a href="home.php" class="home-btn">Home</a>
+    </div>
 
     <div class="content">
-        <h1>LogBook Dashboard</h1>
-        <p>You have successfully logged in to your LogBook account.</p>
-        <p>This is your home page where you can manage your logbook entries.</p>
-        <a href="addLog.php">Add New Log Entry</a>
         <h1>Settings</h1>
-        <a href="settings.php">Edit Settings</a>
+        <a href="register.php">Add Account</a>
     </div>
-    
 </body>
 </html>
